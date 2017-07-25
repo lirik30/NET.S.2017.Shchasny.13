@@ -1,0 +1,5 @@
+c:\users\kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.13\QueueLogic\obj\Debug\QueueLogic.csprojResolveAssemblyReference.cache
+c:\users\kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.13\QueueLogic\bin\Debug\QueueLogic.dll
+c:\users\kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.13\QueueLogic\bin\Debug\QueueLogic.pdb
+c:\users\kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.13\QueueLogic\obj\Debug\QueueLogic.dll
+c:\users\kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.13\QueueLogic\obj\Debug\QueueLogic.pdb
