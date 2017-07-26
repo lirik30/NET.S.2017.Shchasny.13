@@ -1,0 +1,8 @@
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.13\ConsoleUI\bin\Debug\ConsoleUI.exe.config
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.13\ConsoleUI\bin\Debug\ConsoleUI.exe
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.13\ConsoleUI\bin\Debug\ConsoleUI.pdb
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.13\ConsoleUI\bin\Debug\QueueLogic.dll
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.13\ConsoleUI\bin\Debug\QueueLogic.pdb
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.13\ConsoleUI\obj\Debug\ConsoleUI.csprojResolveAssemblyReference.cache
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.13\ConsoleUI\obj\Debug\ConsoleUI.exe
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.13\ConsoleUI\obj\Debug\ConsoleUI.pdb
