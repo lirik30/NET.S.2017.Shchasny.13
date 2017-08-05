@@ -14,6 +14,7 @@ namespace QueueLogic
         private int _head; 
         private int _tail;
         private int _size;
+        private int _version;
 
         #endregion
 
@@ -52,7 +53,9 @@ namespace QueueLogic
             if(ReferenceEquals(collection, null))
                 throw new ArgumentNullException($"{nameof(collection)} must be not null");
 
-            Array.Copy(collection.ToArray(), _arr, collection.Count());//Enqueue?
+            _arr = new T[collection.Count()];
+            foreach (var element in collection)
+                Enqueue(element);
         }
         #endregion
 
@@ -63,7 +66,7 @@ namespace QueueLogic
         public bool Contains(T elem) => _arr.Contains(elem);
 
         /// <summary>
-        /// Add element in the ending of queue
+        /// Adds element in the ending of queue
         /// </summary>
         /// <param name="elem">Element for adding</param>
         public void Enqueue(T elem)
@@ -73,6 +76,7 @@ namespace QueueLogic
 
             _arr[_tail] = elem;
             _size++;
+            _version++;
             _tail = (_tail + 1) % _capacity;
         }
 
@@ -85,6 +89,7 @@ namespace QueueLogic
             T ret = Peek();
             _arr[_head] = default(T);
             _size--;
+            _version++;
             _head = (_head + 1) % _capacity;
             return ret;
         }
@@ -126,11 +131,9 @@ namespace QueueLogic
             _tail = Count;
         }
         
-        internal T GetElement(int index)
-        {
-            return _arr[(_head + index) % _capacity];
-        }
+        internal T GetElement(int index) => _arr[(_head + index) % _capacity];
 
+        internal int GetVersion() => _version;
         #endregion
 
         #region GetEnumeratorы
@@ -153,12 +156,14 @@ namespace QueueLogic
         {
             private readonly Queue<T> _queue;
             private int _currIndex;
+            private int _version;
             private T _currElem; // -1 before start; -2 if ended
 
             public QueueIterator(Queue<T> queue)
             {
                 _queue = queue;
                 _currIndex = -1;
+                _version = queue.GetVersion();
                 _currElem = default(T);
             }
 
@@ -166,6 +171,8 @@ namespace QueueLogic
 
             public bool MoveNext()
             {
+                if(_version != _queue.GetVersion()) throw new InvalidOperationException("The collection was changed. Iterator is not valid.");
+
                 if (_currIndex == -2)
                     return false;
 
@@ -185,6 +192,8 @@ namespace QueueLogic
 
             public void Reset()
             {
+                if (_version != _queue.GetVersion()) throw new InvalidOperationException("The collection was changed. Iterator is not valid.");
+
                 _currIndex = -1;
                 _currElem = default(T);
             }
